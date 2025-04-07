@@ -1,0 +1,9 @@
+from typing import List
+
+def extract_digits(s: str) -> List[int]:
+  return [int(char) for char in s if char.isdigit()]
+
+  # Test cases
+  print(extract_digits("abc123xyz"))
+  print(extract_digits("no digits here!"))
+  print(extract_digits("007bond"))
