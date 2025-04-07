@@ -1,0 +1,15 @@
+from typing import Dict
+def sum_top_scorers(data: Dict[str, Dict[str, int]], subject: str, threshold: int) -> int:
+  total_marks = 0
+  for student, scores in data.items():
+    if subject in scores and scores[subject] > threshold:
+      total_marks += scores[subject]
+  return total_marks
+
+  #test cases
+  data = {
+    "John": {"math": 85, "science": 72},
+    "Amy": {"math": 45, "science": 90},
+    "Mark": {"math": 92, "science": 66}
+  }
+  print(sum_top_scorers(data, "math", 80))
