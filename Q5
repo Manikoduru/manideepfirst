@@ -1,0 +1,13 @@
+from typing import List, Any
+
+def flatten_once(nested_list: List[Any]) -> List[Any]:
+  flattend = []
+  for item in nested_list:
+    if isinstance(item, list):
+      flattend.extend(item)
+    else:
+      flattend.append(item)
+  return flattend
+
+ #test cases
+print(flatten_once([1, [2, 3], 4, [5, 6]]))
